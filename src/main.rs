@@ -28,7 +28,7 @@ async fn main() -> Result<()> {
         )
         .route(
             "/api/v1/sign_transaction",
-            post(handlers::sign_transaction::sign_transaction),
+            post(handlers::sign_evm_transaction::sign_transaction),
         )
         .route(
             "/api/v1/delete_wallet",

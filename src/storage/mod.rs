@@ -268,6 +268,7 @@ impl WalletStorage {
     pub fn verify_wallet_owner(&self, wallet_id: &str, owner_public_key_pem: &str) -> Result<bool> {
         let wallet_data = self.get_wallet(wallet_id)?;
         let owner_hash = hash_public_key(owner_public_key_pem);
+
         Ok(wallet_data.owner_public_key_hash == owner_hash)
     }
 }
